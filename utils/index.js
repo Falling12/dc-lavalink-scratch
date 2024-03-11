@@ -46,7 +46,6 @@ export const getSongInfo = async (query) => {
 
 export const createLavaPlayer = async (guildId, sessionId, voice) => {
     const res = await axios.patch(`http://${process.env.LAVA_HOST}:${process.env.LAVA_PORT}/v4/sessions/${sessionId}/players/${guildId}?noReplace=false`, {
-        position: 0,
         paused: false,
         volume: 100,
         voice: voice
